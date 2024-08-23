@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task</title>
+    <link rel="stylesheet" href="link/bootstrap.css" />
+    <script src="link/bootstrap.js"></script>
+    <link rel="stylesheet" href="aminities.css" />
+    <link rel="stylesheet" href="connectivity.css" />
+    <link rel="stylesheet" href="specification.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
+    />
+    <link rel="stylesheet" href="gallery2.css" />
+
+    <style>
+      body {
+        background: #fffaf7;
+      }
+      .nav-link {
+        color: #233231 !important;
+        font-family: "Times New Roman";
+      }
+
+      .hero-section {
+        position: relative;
+        background-image: url("img/bg.png"); /* Use the uploaded image */
+        background-size: cover;
+        background-position: center;
+        height: 95vh;
+        color: white;
+        display: flex;
+        align-items: center;
+        text-align: justify;
+        padding: 0 20px;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+        z-index: 1;
+        border-radius: 45px;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 50px;
+        max-width: 800px;
+        /* margin: auto; */
+      }
+
+      .hero-content h1 {
+        font-family: "Times New Roman", serif;
+        font-size: 3rem;
+      }
+
+      .hero-content p {
+        font-size: 1.2rem;
+      }
+
+      .mob_only {
+        display: none;
+      }
+
+      @media (max-width: 1200px) {
+        .hero-content h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-content p {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-content {
+          padding: 30px;
+        }
+
+        .hero-section {
+          height: 75vh;
+          padding: 0 15px;
+        }
+
+        .hero-content h1 {
+          font-size: 2rem;
+        }
+
+        .hero-content p {
+          font-size: 1rem;
+        }
+
+        .mob_only {
+          display: block;
+        }
+        .only_pc {
+          display: none;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-section {
+          height: 60vh;
+        }
+
+        .hero-content {
+          padding: 20px;
+        }
+
+        .hero-content h1 {
+          font-size: 1.8rem;
+        }
+
+        .hero-content p {
+          font-size: 0.9rem;
+        }
+      }
+
+      a {
+        text-decoration: none;
+      }
+      @font-face {
+        font-family: "Times New Roman";
+        src: url("times new roman.woff2") format("woff2"),
+          /* Modern Browsers */ url("times new roman.woff") format("woff"); /* Older Browsers */
+        /* Add additional font properties like font-weight and font-style if needed */
+      }
+
+      .navbar-brand {
+        font-weight: bold;
+      }
+      .menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+      }
+      .line {
+        display: block;
+        height: 3px;
+        background-color: black;
+        border-radius: 2px;
+      }
+      .line1 {
+        width: 100%;
+      }
+      .line2 {
+        width: 75%;
+      }
+      .line3 {
+        width: 50%;
+      }
+      .navbar-nav .nav-item {
+        margin: 0 10px; /* Adds 20px of space on both the left and right */
+      }
+
+      .text-content {
+        margin-left: 0; /* Reset margin on smaller screens */
+      }
+      @media (min-width: 768px) {
+        .text-content {
+          margin-left: 50px; /* Margin for medium and larger screens */
+        }
+      }
+      .custom-heading {
+        font-family: "Times New Roman", serif;
+        font-size: 2.5rem; /* Font size for medium and larger screens */
+        font-weight: 100;
+      }
+      @media (max-width: 576px) {
+        .custom-heading {
+          font-size: 1.8rem; /* Smaller font size for extra small screens */
+        }
+      }
+
+      h1 {
+        font-family: "Times New Roman", serif;
+        font-weight: 100;
+        font-size: 2rem; /* Responsive font size */
+        margin: 0;
+      }
+
+      p {
+        font-size: 1rem; /* Responsive font size */
+        line-height: 1.5;
+        margin: 0.5rem 0;
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 1.5rem; /* Adjust font size for smaller screens */
+        }
+
+        p {
+          font-size: 0.875rem; /* Adjust font size for smaller screens */
+        }
+      }
+
+      @media (max-width: 480px) {
+        h1 {
+          font-size: 1.25rem; /* Further adjust for very small screens */
+        }
+
+        p {
+          font-size: 0.75rem; /* Further adjust for very small screens */
+        }
+      }
+
+      /* Ensure the h1 is properly sized on different screens */
+      h1 {
+        font-size: 2em;
+      }
+
+      /* Adjust text alignment and font size for smaller screens */
+      @media (max-width: 768px) {
+        .only_pc {
+          display: none; /* Hide PC-only content on smaller screens */
+        }
+
+        .mob_only {
+          display: block; /* Show mobile-only content on smaller screens */
+          font-size: 1.5em; /* Adjust font size for mobile view */
+        }
+
+        .col-md-6 {
+          margin-bottom: 20px; /* Add spacing between columns on smaller screens */
+        }
+
+        .container {
+          padding: 0 15px; /* Adjust container padding for smaller screens */
+        }
+
+        .row {
+          flex-direction: column; /* Stack columns vertically on smaller screens */
+        }
+
+        .img-fluid {
+          max-width: 100%; /* Ensure images fit within the container */
+          height: auto;
+        }
+
+        .fa-solid {
+          font-size: 30px; /* Adjust icon size for smaller screens */
+        }
+
+        .mx-3 {
+          display: flex;
+          justify-content: center; /* Center arrows on smaller screens */
+        }
+
+        .mx-5 {
+          margin-left: 15px; /* Adjust spacing between arrows */
+        }
+      }
+
+      /* Adjust for very small screens like smartphones */
+      @media (max-width: 576px) {
+        .mob_only {
+          font-size: 1.2em; /* Adjust mobile-only content font size */
+        }
+
+        .fa-solid {
+          font-size: 24px; /* Further adjust icon size for very small screens */
+        }
+
+        .mx-5 {
+          margin-left: 10px; /* Further adjust spacing between arrows */
+        }
+      }
+
+      .custom-section {
+        padding: 20px;
+      }
+
+      .custom-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .custom-left,
+      .custom-right {
+        flex: 1;
+        padding: 10px;
+      }
+
+      .custom-right {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+
+      .custom-right img {
+        height: 8vh;
+        margin-bottom: 10px;
+      }
+
+      .custom-right img:last-child {
+        margin-bottom: 0;
+      }
+
+      .custom-right img.full-width {
+        height: auto;
+        border-radius: 18px;
+      }
+
+      @media (max-width: 767.98px) {
+        body,
+        html {
+          overflow-x: hidden;
+        }
+        .custom-container {
+          flex-direction: column;
+        }
+
+        .custom-right {
+          align-items: center;
+        }
+
+        .custom-right img {
+          height: auto;
+          max-height: 50px; /* Adjust based on your preference */
+        }
+        .mob_size {
+          width: 290px !important;
+          height: 52vh !important;
+        }
+        .mov_next {
+          right: 15px;
+        }
+        .mov_prev {
+          left: 18px;
+        }
+        .slide-wrapper {
+          overflow: hidden;
+          position: relative;
+          width: 100%;
+          height: 400px !important; /* Adjust as needed for your layout */
+        }
+        .mob_about {
+          font-size: 20px;
+          font-weight: 500;
+          text-align: center;
+        }
+        .mob_width {
+          width: 500px;
+          max-height: 540px !important;
+        }
+        .mob_center {
+          text-align: center !important;
+          margin-bottom: -5px;
+        }
+      }
+
+      .slide-wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 200px; /* Adjust as needed for your layout */
+      }
+
+      .slide-content {
+        display: block; /* Change from flex to block for vertical sliding */
+        transition: transform 0.5s ease-in-out;
+        will-change: transform;
+      }
+
+      .sticky-buttons {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        z-index: 999;
+      }
+
+      /* General button styles */
+      .sticky-btn-enquire {
+        font-size: 1rem; /* Scales with root font size */
+        padding: 1rem 1.5rem;
+        background-color: #ffcda6;
+        color: black;
+        border-radius: 0.5rem;
+        font-family: "BigCaslonFB", sans-serif;
+        font-weight: 400;
+        line-height: 1.2;
+        text-align: center;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 0.3s linear;
+      }
+
+      /* Desktop and large screens */
+      @media screen and (min-width: 1200px) {
+        .sticky-btn-enquire {
+          position: fixed;
+          top: 23vh; /* Relative to viewport height */
+          right: -6vw; /* Position using viewport width */
+          transform: rotate(-90deg);
+        }
+
+        .sticky-btn-enquire.sticky-btn-virtual-tour {
+          top: 55vh; /* Adjusted for large screens */
+          right: -4vw;
+        }
+      }
+
+      /* Medium screens */
+      @media screen and (min-width: 768px) and (max-width: 1199px) {
+        .sticky-btn-enquire {
+          position: fixed;
+          top: 25vh;
+          right: -4vw;
+          transform: rotate(-90deg);
+        }
+
+        .sticky-btn-enquire.sticky-btn-virtual-tour {
+          top: 40vh;
+          right: -4vw;
+        }
+      }
+
+      /* Tablet and small screens */
+      /* Tablet and small screens */
+      @media screen and (max-width: 767px) {
+        .sticky-buttons {
+          flex-direction: row; /* Align buttons in one line */
+          justify-content: center; /* Center the buttons horizontally */
+          align-items: center; /* Center the buttons vertically */
+          padding: 0.5rem;
+        }
+
+        .sticky-btn-enquire {
+          flex: none;
+          width: auto; /* Adjust the width so that buttons take their natural size */
+          margin: 0 0.5rem; /* Add some space between buttons */
+          padding: 0.75rem 1rem;
+          font-size: 0.9rem;
+          transform: none;
+          position: relative;
+          right: auto;
+          top: auto;
+        }
+
+        .sticky-btn-enquire.sticky-btn-virtual-tour {
+          margin-bottom: 0;
+        }
+      }
+
+      /* Extra small screens (e.g., mobile phones) */
+      @media screen and (max-width: 480px) {
+        .sticky-btn-enquire {
+          padding: 0.5rem 0.75rem;
+          font-size: 0.8rem;
+        }
+      }
+
+      .carousel-wrap {
+        position: relative;
+      }
+
+      .item {
+        position: relative;
+        display: inline-block;
+        overflow: hidden;
+      }
+
+      .item img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: opacity 0.3s ease;
+      }
+
+      .item:hover {
+        background-color: #f6dcc6;
+      }
+
+      .item > img:hover {
+        opacity: 0.4;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: black;
+        font-size: 3em;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none; /* Ensures the overlay does not block hover effects */
+      }
+
+      .item:hover .overlay {
+        opacity: 1;
+      }
+
+      @media (max-width: 768px) {
+        .next-button {
+          right: -34px;
+          top: 47%;
+        }
+        .prev-button {
+          left: -29px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div class="container"> -->
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a
+            class="navbar-brand mx-5"
+            href="#"
+            style="font-family: 'Times New Roman'; font-weight: 100"
+          >
+            <p style="font-size: 35px">One&Only</p></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            style="border: none; box-shadow: none"
+          >
+            <!-- Custom Hamburger Icon -->
+            <div class="menu-icon">
+              <span class="line line1"></span>
+              <span class="line line2"></span>
+              <span class="line line3"></span>
+            </div>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Overview</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Amenities">Amenities</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Connectivity">Connectivity</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Gallery">Gallery</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#plans">Plans</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Specification">Specification</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#Developer">About the Developer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!-- </div> -->
+
+    <br />
+    <div class="container">
+      <div class="hero-section" style="border-radius: 45px">
+        <div class="hero-content">
+          <h1>Your Journey to Luxury <br />Begins Here</h1>
+          <p class="mt-4">
+            Lorem ipsum dolor sit amet consectetur. Tristique diam ultricies at
+            elit.<br />
+            Tincidunt diam turpis id magna fringilla.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+
+    <div class="sticky-buttons">
+      <a
+        href="javascript:void(0)"
+        class="sticky-btn-enquire"
+        onclick="openModel('register-modal');openModel('home');"
+        >Download Brochure</a
+      >
+      <!-- <a href="https://www.universalcg.hk/DLF%20Valley%20Gardens/" class="sticky-btn-enquire sticky-btn-virtual-tour " target="_blank">Virtual Tour</a> -->
+      <a
+        href="javascript:;"
+        class="sticky-btn-enquire sticky-btn-virtual-tour"
+        onclick="enquire_pop()"
+        >Enquire Now</a
+      >
+    </div>
+
+    <br />
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-3 col-12">
+          <h1
+            class="custom-heading mob_only"
+            style="font-size: 35px; text-align: center; margin-bottom: 20px"
+          >
+            ABOUT US
+          </h1>
+
+          <div class="img-container" style="border-radius: 20px">
+            <img
+              src="img/residential.jpg"
+              class="img-fluid"
+              alt="Residential"
+              style="border-radius: 20px"
+            />
+          </div>
+        </div>
+        <div class="col-md-5 col-12 text-content">
+          <br />
+          <p class="custom-heading only_pc">ABOUT US</p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Vivamus id pretium.
+            vestibulum rhoncus egestas
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur. Quis non congue tellus
+            sagittis lorem nisi. Varius turpis in sit diam mauris diam.
+          </p>
+          <p>
+            Hac egestas faucibus tempus elit ipsum erat posuere, Arcu nunc
+            tellus nibh. tellus porta integer risus. Tortor nec eu id tristique
+            scelerisque laculis ultrices odic neque.
+          </p>
+          <p>Quis tristique nisi nibh ac nulla feugiat nulla sit.</p>
+          <p>Enim vitae turpis in odio laoreet ullamcorper cursus tincidunt.</p>
+        </div>
+        <div class="col-md-2 col-12"></div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <section id="Amenities">
+      <div
+        style="
+          font-family: Times New Roman;
+
+          justify-content: center;
+          align-items: center;
+
+          text-align: center;
+          padding: 0 20px;
+          background: #fff3e9;
+        "
+      >
+        <br />
+        <br />
+        <h1>AMENITIES</h1>
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum
+          rhoncus egestas.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Quis non congue tellus
+          sagittis lorem nisl. Varius turpis in sit diam mauris diam.<br />
+          Enim vitae turpis in odio laoreet ullamcorper cursus tincidunt.
+        </p>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+      </div>
+
+      <center>
+        <div style="margin-top: -280px">
+          <div class="slider">
+            <button class="prev mov_prev">&#10094;</button>
+            <div class="slider-wrapper">
+              <div class="slider-item">
+                <img
+                  class="mob_size"
+                  src="img/slider-1(i).webp"
+                  style="height: 50vh"
+                  alt="Gym & Exercise"
+                />
+                <h4 class="mt-3">Gym & Exercise</h4>
+              </div>
+              <div class="slider-item">
+                <img
+                  class="mob_size"
+                  src="img/4571353331_c1feddb093_k.jpg"
+                  style="height: 50vh"
+                  alt="Swimming Pool"
+                />
+                <h4 class="mt-3">Swimming Pool</h4>
+              </div>
+              <div class="slider-item">
+                <img
+                  class="mob_size"
+                  src="img/0_75U8BzPpDYy091H7.jpg"
+                  style="height: 50vh"
+                  alt="Kids Playing Area"
+                />
+                <h4 class="mt-3">Kids Playing Area</h4>
+              </div>
+              <div class="slider-item">
+                <img
+                  class="mob_size"
+                  src="img/expediav2-658352-7e1b11-558778.jpg"
+                  style="height: 50vh"
+                  alt="Jogging Park & Run Track"
+                />
+                <h4 class="mt-3">Jogging Park & Run Track</h4>
+              </div>
+              <div class="slider-item">
+                <img
+                  class="mob_size"
+                  src="img/20200318_172335.webp"
+                  style="height: 50vh"
+                  alt="Jogging Park & Run Track"
+                />
+                <h4 class="mt-3">Jogging Park & Run Track</h4>
+              </div>
+              <div class="slider-item">
+                <img
+                  class="mob_size"
+                  src="img/residential.jpg"
+                  style="height: 50vh"
+                  alt="Jogging Park & Run Track"
+                />
+                <h4 class="mt-3">Jogging Park & Run Track</h4>
+              </div>
+              <div class="slider-item">
+                <img
+                  class="mob_size"
+                  src="img/expediav2-56244-6b1357-791961.jpg"
+                  style="height: 50vh"
+                  alt="Jogging Park & Run Track"
+                />
+                <h4 class="mt-3">Jogging Park & Run Track</h4>
+              </div>
+            </div>
+            <button class="next mov_next">&#10095;</button>
+          </div>
+        </div>
+      </center>
+    </section>
+
+    <script>
+      const prevBtn = document.querySelector(".prev");
+      const nextBtn = document.querySelector(".next");
+      const sliderWrapper = document.querySelector(".slider-wrapper");
+      const sliderItems = document.querySelectorAll(".slider-item");
+
+      let isScrolling = false;
+
+      const scrollSlider = (direction) => {
+        if (isScrolling) return; // Prevent double clicks
+
+        isScrolling = true;
+        const scrollAmount = sliderItems[0].clientWidth; // Adjust to the width of one item
+
+        sliderWrapper.scrollBy({
+          left: direction * scrollAmount,
+          behavior: "smooth",
+        });
+
+        setTimeout(() => {
+          isScrolling = false; // Re-enable button after scrolling is done
+        }, 300); // Adjust timeout to match the scroll duration
+      };
+
+      prevBtn.addEventListener("click", () => scrollSlider(-1));
+      nextBtn.addEventListener("click", () => scrollSlider(1));
+    </script>
+
+    <br />
+    <br />
+    <br />
+    <center>
+      <section class="" id="Connectivity" style="background: #fff3e9">
+        <br />
+        <br />
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <h1
+                class="mob_only"
+                style="
+                  font-family: 'Times New Roman';
+                  font-size: 30px;
+                  margin-bottom: 30px;
+                "
+              >
+                CONNECTIVITY
+              </h1>
+              <img
+                src="img/Conscient-Prime-Corner-LOCATION-MAP.webp"
+                class="img-fluid"
+                alt=""
+              />
+            </div>
+            <div class="col-md-6" style="text-align: justify">
+              <h1 class="only_pc" style="font-family: 'Times New Roman'">
+                CONNECTIVITY
+              </h1>
+              <p class="mt-3">
+                Lorem ipsum dolor sit amet consectetur. Vivamus id pretium
+                vestibulum rhoncus egestas.
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Quis non congue tellus
+                sagittis lorem nisl. Varius turpis in sit diam mauris diam.
+              </p>
+              <br />
+
+              <!-- Slideable Content -->
+              <div class="slide-wrapper">
+                <div class="slide-content">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div>
+                        <i
+                          class="fa-solid fa-hospital"
+                          style="font-size: 45px"
+                        ></i>
+                        <p class="mt-3"><b>Hospital</b></p>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Cadence Research & Consulting</p>
+                          <p>5.2 Km</p>
+                        </div>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Community Health Service</p>
+                          <p>2.3 Km</p>
+                        </div>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Above n Beyond Medical</p>
+                          <p>1.9 Km</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div>
+                        <i
+                          class="fa-solid fa-graduation-cap"
+                          style="font-size: 45px"
+                        ></i>
+                        <p class="mt-3"><b>Education</b></p>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Cadence Research & Consulting</p>
+                          <p>6.2 Km</p>
+                        </div>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Community Health Service</p>
+                          <p>3.3 Km</p>
+                        </div>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Above n Beyond Medical</p>
+                          <p>2.2 Km</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div>
+                        <i
+                          class="fa-solid fa-shopping-cart"
+                          style="font-size: 45px"
+                        ></i>
+                        <p class="mt-3"><b>Shopping</b></p>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>City Mall</p>
+                          <p>3.5 Km</p>
+                        </div>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Super Market</p>
+                          <p>2.1 Km</p>
+                        </div>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Local Bazaar</p>
+                          <p>1.2 Km</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div>
+                        <i class="fa-solid fa-bus" style="font-size: 45px"></i>
+                        <p class="mt-3"><b>Transportation</b></p>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Bus Stop</p>
+                          <p>0.8 Km</p>
+                        </div>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Metro Station</p>
+                          <p>1.5 Km</p>
+                        </div>
+                        <div
+                          style="display: flex; justify-content: space-between"
+                        >
+                          <p>Train Station</p>
+                          <p>5.6 Km</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Navigation Arrows -->
+              <div class="mx-3 mt-3" style="cursor: pointer">
+                <i class="fa-solid fa-arrow-left slide-left"></i>
+                <i class="fa-solid fa-arrow-right mx-5 slide-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <br />
+        <br />
+      </section>
+    </center>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const slideLeft = document.querySelector(".slide-left");
+        const slideRight = document.querySelector(".slide-right");
+        const slideContent = document.querySelector(".slide-content");
+        const rowHeight = slideContent.querySelector(".row").offsetHeight;
+        const totalRows = slideContent.children.length;
+        let currentSlide = 0;
+
+        slideRight.addEventListener("click", function () {
+          if (currentSlide < totalRows - 1) {
+            currentSlide++;
+            slideContent.style.transform = `translateY(-${
+              currentSlide * rowHeight
+            }px)`;
+          }
+        });
+
+        slideLeft.addEventListener("click", function () {
+          if (currentSlide > 0) {
+            currentSlide--;
+            slideContent.style.transform = `translateY(-${
+              currentSlide * rowHeight
+            }px)`;
+          }
+        });
+      });
+    </script>
+
+    <br />
+    <br />
+    <section id="Gallery">
+      <center>
+        <p style="font-size: 35px; font-family: 'Times New Roman'">Gallery</p>
+
+        <br />
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum
+          rhoncus egestas.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Quis non congue tellus
+          sagittis lorem nisl. Varius turpis in sit diam mauris diam.
+        </p>
+      </center>
+
+      <br />
+      <div class="carousel-wrap">
+        <div class="owl-carousel">
+          <div class="item">
+            <img src="img/20200318_172335.webp" />
+            <div class="overlay">+</div>
+          </div>
+          <div class="item down">
+            <img src="img/4571353331_c1feddb093_k.jpg" />
+            <span class="overlay">+</span>
+          </div>
+          <div class="item">
+            <img src="img/residential.jpg" />
+            <span class="overlay">+</span>
+          </div>
+          <div class="item down">
+            <img src="img/4571353331_c1feddb093_k.jpg" />
+            <span class="overlay">+</span>
+          </div>
+          <!-- add more items as needed -->
+        </div>
+        <button class="prev-button">&#10094;</button>
+        <button class="next-button">&#10095;</button>
+      </div>
+    </section>
+
+    <br />
+    <br />
+
+    <section id="plans" style="background: #fff3e9">
+      <br />
+      <br />
+      <div class="container">
+        <p style="font-family: 'Times New Roman'; font-size: 30px">
+          UNIT PLANS
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum
+          rhoncus egestas.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur. Quis non congue tellus
+          sagittis lorem nisl. Varius turpis in sit <br />
+          diam mauris diam
+        </p>
+      </div>
+
+      <br />
+      <br />
+
+      <center>
+        <div>
+          <div class="image-slider7">
+            <button class="prev7-button7 mob_next_size">&#10094;</button>
+            <div class="slider-container7">
+              <div class="slide7">
+                <img
+                  class="responsive-img img_unit"
+                  src="img/slider-1(i).webp"
+                  style="height: 50vh"
+                  alt="Gym & Exercise"
+                />
+                <div class="enquire-box">Enquire Now</div>
+                <p
+                  class="slide-caption mob_cap_size mt-3"
+                  style="font-size: 20px; text-align: left"
+                >
+                  2 BHK Floor Plan
+                </p>
+
+                <div class="flex_mov_left" style="display: flex; gap: 20px">
+                  <p>2 BHK</p>
+                  <p style="border-right: 2px solid black"></p>
+                  <p>3025 Sq.Ft</p>
+                  <p style="border-right: 2px solid black"></p>
+
+                  <p>West Facing</p>
+                </div>
+              </div>
+              <div class="slide7">
+                <img
+                  class="responsive-img img_unit"
+                  src="img/4571353331_c1feddb093_k.jpg "
+                  style="height: 50vh"
+                  alt="Swimming Pool"
+                />
+                <div class="enquire-box">Enquire Now</div>
+                <p
+                  class="slide-caption mob_cap_size mt-3"
+                  style="font-size: 20px; text-align: left"
+                >
+                  2 BHK Floor Plan
+                </p>
+
+                <div class="flex_mov_left" style="display: flex; gap: 20px">
+                  <p>2 BHK</p>
+                  <p style="border-right: 2px solid black"></p>
+                  <p>3025 Sq.Ft</p>
+                  <p style="border-right: 2px solid black"></p>
+
+                  <p>West Facing</p>
+                </div>
+              </div>
+              <div class="slide7">
+                <img
+                  class="responsive-img img_unit"
+                  src="img/0_75U8BzPpDYy091H7.jpg"
+                  style="height: 50vh"
+                  alt="Kids Playing Area"
+                />
+                <div class="enquire-box">Enquire Now</div>
+                <p
+                  class="slide-caption mob_cap_size mt-3"
+                  style="font-size: 20px; text-align: left"
+                >
+                  2 BHK Floor Plan
+                </p>
+
+                <div class="flex_mov_left" style="display: flex; gap: 20px">
+                  <p>2 BHK</p>
+                  <p style="border-right: 2px solid black"></p>
+                  <p>3025 Sq.Ft</p>
+                  <p style="border-right: 2px solid black"></p>
+
+                  <p>West Facing</p>
+                </div>
+              </div>
+              <div class="slide7">
+                <img
+                  class="responsive-img img_unit"
+                  src="img/expediav2-658352-7e1b11-558778.jpg"
+                  style="height: 50vh"
+                  alt="Jogging Park & Run Track"
+                />
+                <div class="enquire-box">Enquire Now</div>
+                <p
+                  class="slide-caption mob_cap_size mt-3"
+                  style="font-size: 20px; text-align: left"
+                >
+                  2 BHK Floor Plan
+                </p>
+
+                <div class="flex_mov_left" style="display: flex; gap: 20px">
+                  <p>2 BHK</p>
+                  <p style="border-right: 2px solid black"></p>
+                  <p>3025 Sq.Ft</p>
+                  <p style="border-right: 2px solid black"></p>
+
+                  <p>West Facing</p>
+                </div>
+              </div>
+              <div class="slide7">
+                <img
+                  class="responsive-img img_unit"
+                  src="img/20200318_172335.webp"
+                  style="height: 50vh"
+                  alt="Jogging Park & Run Track"
+                />
+                <div class="enquire-box">Enquire Now</div>
+                <p
+                  class="slide-caption mob_cap_size mt-3"
+                  style="font-size: 20px; text-align: left"
+                >
+                  2 BHK Floor Plan
+                </p>
+
+                <div class="flex_mov_left" style="display: flex; gap: 20px">
+                  <p>2 BHK</p>
+                  <p style="border-right: 2px solid black"></p>
+                  <p>3025 Sq.Ft</p>
+                  <p style="border-right: 2px solid black"></p>
+
+                  <p>West Facing</p>
+                </div>
+              </div>
+              <div class="slide7">
+                <img
+                  class="responsive-img img_unit"
+                  src="img/residential.jpg"
+                  style="height: 50vh"
+                  alt="Jogging Park & Run Track"
+                />
+                <div class="enquire-box">Enquire Now</div>
+                <p
+                  class="slide-caption mob_cap_size mt-3"
+                  style="font-size: 20px; text-align: left"
+                >
+                  2 BHK Floor Plan
+                </p>
+
+                <div class="flex_mov_left" style="display: flex; gap: 20px">
+                  <p>2 BHK</p>
+                  <p style="border-right: 2px solid black"></p>
+                  <p>3025 Sq.Ft</p>
+                  <p style="border-right: 2px solid black"></p>
+
+                  <p>West Facing</p>
+                </div>
+              </div>
+              <div class="slide7">
+                <img
+                  class="responsive-img img_unit"
+                  src="img/expediav2-56244-6b1357-791961.jpg"
+                  style="height: 50vh"
+                  alt="Jogging Park & Run Track"
+                />
+                <div class="enquire-box">Enquire Now</div>
+                <p
+                  class="slide-caption mob_cap_size mt-3"
+                  style="font-size: 20px; text-align: left"
+                >
+                  2 BHK Floor Plan
+                </p>
+
+                <div class="flex_mov_left" style="display: flex; gap: 20px">
+                  <p>2 BHK</p>
+                  <p style="border-right: 2px solid black"></p>
+                  <p>3025 Sq.Ft</p>
+                  <p style="border-right: 2px solid black"></p>
+
+                  <p>West Facing</p>
+                </div>
+              </div>
+            </div>
+            <button class="next7-button7 mob_prev_size">&#10095;</button>
+          </div>
+        </div>
+      </center>
+      <br />
+      <br />
+    </section>
+
+    <script>
+      const prev7Button7 = document.querySelector(".prev7-button7");
+      const next7Button7 = document.querySelector(".next7-button7");
+      const sliderContainer7 = document.querySelector(".slider-container7");
+      const slides7 = document.querySelectorAll(".slide7");
+
+      let isScrolling2 = false;
+      let currentIndex = 0;
+
+      const scrollSlides7 = (direction) => {
+        if (isScrolling2) return;
+
+        isScrolling2 = true;
+        currentIndex += direction;
+
+        const visibleSlides = Math.floor(
+          window.innerWidth / slides7[0].clientWidth
+        );
+
+        if (currentIndex < 0) {
+          currentIndex = slides7.length - visibleSlides;
+        } else if (currentIndex >= slides7.length - visibleSlides + 1) {
+          currentIndex = 0;
+        }
+
+        const scrollAmount = slides7[0].clientWidth * currentIndex;
+
+        sliderContainer7.scrollTo({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+
+        setTimeout(() => {
+          isScrolling2 = false;
+        }, 300);
+      };
+
+      // Event listeners for buttons
+      prev7Button7.addEventListener("click", () => scrollSlides7(-1));
+      next7Button7.addEventListener("click", () => scrollSlides7(1));
+
+      // Adjust slider on window resize
+      window.addEventListener("resize", () => {
+        scrollSlides7(0); // Adjust the scroll position based on the new window size
+      });
+    </script>
+    <br />
+    <br />
+    <br />
+    <center>
+      <h1 class="mob_about" id="Specification" style="font-family: 'Times New Roman'">
+        SPECIFICATION
+      </h1>
+      <p class="mt-4">
+        Lorem ipsum dolor sit amet consectetur. Vivamus id pretium vestibulum
+        rhoncus egestas. Vivamus id pretium vestibulum rhoncus egestas
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur. Quis non congue tellus sagittis
+        lorem nisl. Varius turpis in sit diam mauris diam
+      </p>
+    </center>
+    <br>
+    <section >
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <center>
+        <div class="image-slider07">
+          <div class="slider-container07">
+            <div class="slide07">
+              <img
+                class="responsive-img2"
+                src="img/slider-1(i).webp"
+                style="height: 50vh"
+                alt="Gym & Exercise"
+              />
+              <div class="text-overlay07">Gym & Exercise</div>
+            </div>
+            <div class="slide07">
+              <img
+                class="responsive-img2"
+                src="img/4571353331_c1feddb093_k.jpg"
+                style="height: 50vh"
+                alt="Swimming Pool"
+              />
+              <div class="text-overlay07">Swimming Pool</div>
+            </div>
+            <div class="slide07">
+              <img
+                class="responsive-img2"
+                src="img/0_75U8BzPpDYy091H7.jpg"
+                style="height: 50vh"
+                alt="Kids Playing Area"
+              />
+              <div class="text-overlay07">Kids Playing Area</div>
+            </div>
+            <div class="slide07">
+              <img
+                class="responsive-img2"
+                src="img/expediav2-658352-7e1b11-558778.jpg"
+                style="height: 50vh"
+                alt="Jogging Park & Run Track"
+              />
+              <div class="text-overlay07">Jogging Park & Run Track</div>
+            </div>
+            <div class="slide07">
+              <img
+                class="responsive-img2"
+                src="img/20200318_172335.webp"
+                style="height: 50vh"
+                alt="Jogging Park & Run Track"
+              />
+              <div class="text-overlay07">Jogging Park & Run Track</div>
+            </div>
+            <div class="slide07">
+              <img
+                class="responsive-img2"
+                src="img/residential.jpg"
+                style="height: 50vh"
+                alt="Residential Area"
+              />
+              <div class="text-overlay07">Residential Area</div>
+            </div>
+            <div class="slide07">
+              <img
+                class="responsive-img2"
+                src="img/expediav2-56244-6b1357-791961.jpg"
+                style="height: 50vh"
+                alt="Jogging Park & Run Track"
+              />
+              <div class="text-overlay07">Jogging Park & Run Track</div>
+            </div>
+          </div>
+          <button class="prev2-button007">&#10094;</button>
+          <button class="next2-button007">&#10095;</button>
+        </div>
+      </center>
+      <br />
+      <br />
+    </section>
+
+    <script>
+      const prevButton007 = document.querySelector(".prev2-button007");
+      const nextButton007 = document.querySelector(".next2-button007");
+      const sliderContainer07 = document.querySelector(".slider-container07");
+      const slides07 = document.querySelectorAll(".slide07");
+    
+      let isScrolling07 = false;
+      let currentIndex07 = 0;
+    
+      const updateTextOverlay = () => {
+        // Determine the index of the second slide
+        const centerIndex = Math.floor(slides07.length / 2);
+
+        slides07.forEach((slide07, index) => {
+          if (index === (currentIndex + 1) % slides07.length) {
+            // Determine the second slide in the view
+            slide07.classList.add("show-text");
+          } else {
+            slide07.classList.remove("show-text");
+          }
+        });
+      };
+    
+      const scrollSlides07 = (direction) => {
+        if (isScrolling07) return;
+
+        isScrolling07 = true;
+        currentIndex += direction;
+
+        // Ensure the index is within bounds
+        if (currentIndex < 0) {
+          currentIndex =
+            slides07.length -
+            Math.floor(window.innerWidth / slides07[0].clientWidth);
+        } else if (
+          currentIndex >=
+          slides07.length - Math.floor(window.innerWidth / slides07[0].clientWidth)
+        ) {
+          currentIndex = 0;
+        }
+
+        const scrollAmount = slides07[0].clientWidth * currentIndex;
+
+        sliderContainer07.scrollTo({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+
+        updateTextOverlay(); // Update text overlay after scrolling
+
+        setTimeout(() => {
+          isScrolling07 = false;
+        }, 300);
+      };
+    
+      prevButton007.addEventListener("click", () => scrollSlides07(-1));
+      nextButton007.addEventListener("click", () => scrollSlides07(1));
+    
+      // Initialize the text overlay on page load
+      updateTextOverlay();
+    
+      // Adjust slider on window resize
+      window.addEventListener("resize", () => {
+        const slideWidth = slides07[0].clientWidth;
+        const scrollAmount = slideWidth * currentIndex07;
+        sliderContainer07.scrollTo({
+          left: scrollAmount,
+          behavior: "smooth",
+        });
+      });
+    </script>
+
+<br />
+<br />
+
+    <br />
+    <section id="Developer" style="background: #fff3e9">
+      <br />
+      <br />
+      <div class="container">
+        <div class="custom-section">
+          <div class="custom-container">
+            <div class="custom-left">
+              <h1 class="mob_about" style="font-family: 'Times New Roman'">
+                ABOUT THE DEVELOPER
+              </h1>
+              <p class="mt-3">
+                Lorem ipsum dolor sit amet consectetur. Vivamus id pretium
+                vestibulum rhoncus egestas. Vivamus id pretium vestibulum
+                rhoncus egestas
+              </p>
+              <p>
+                Lorem ipsum dolor sit amet consectetur. Quis non congue tellus
+                sagittis lorem nisl. Varius turpis in sit diam mauris diam
+              </p>
+              <p>
+                Hac egestas faucibus tempus elit ipsum erat posuere. Arcu nunc
+                tellus nibh tellus porta integer risus. Tortor nec eu id
+                tristique scelerisque iaculis ultrices odio neque
+              </p>
+              <p>Quis tristique nisi nibh ac nulla feugiat nulla sit.</p>
+              <p>
+                Enim vitae turpis in odio laoreet ullamcorper cursus tincidunt.
+              </p>
+            </div>
+            <div class="custom-right">
+              <div style="display: flex; gap: 30px">
+                <img
+                  src="img/bestavenue-250x190.jpg"
+                  class="img-fluid"
+                  alt=""
+                />
+                <p style="border-right: 1px solid black; height: 50px"></p>
+                <img src="img/ppj8hpri.jpg" class="img-fluid" alt="" />
+              </div>
+
+              <img
+                src="img/affordable-homes-in-mulund-west-july-2023.jpg"
+                class="img-fluid full-width mt-3 mob_width"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <br />
+    </section>
+
+    <footer style="background: #ffcda6">
+      <br />
+      <br />
+      <div class="container">
+        <h1 style="font-family: 'Times New Roman'">One & Only</h1>
+        <br />
+        <div class="row">
+          <div class="col-md-3 col-12" style="margin-bottom: 20px">
+            <h4 style="font-family: 'Times New Roman'; color: #2e4a4d">
+              SITE ADDRESS
+            </h4>
+            <p style="color: #2e4a4d">
+              Imagine your own oasis overflowing with luxury and natural beauty.
+              Crystal clear water.
+            </p>
+          </div>
+          <div class="col-md-3 col-12" style="margin-bottom: 20px">
+            <h4 style="font-family: 'Times New Roman'; color: #2e4a4d">
+              CONTACT Us
+            </h4>
+            <p style="margin-bottom: 1px; color: #2e4a4d">000000000</p>
+            <a href="mailto:example@gmail.com" style="color: #2e4a4d"
+              >example@gmail.com</a
+            >
+          </div>
+          <div class="col-md-3 col-12" style="margin-bottom: 20px">
+            <h4 style="font-family: 'Times New Roman'; color: #2e4a4d">
+              MAHA RERA NO
+            </h4>
+            <div class="row">
+              <div class="col-4">
+                <img
+                  src="img/QR_code_for_mobile_English_Wikipedia.svg"
+                  class="img-fluid"
+                  style="height: 10vh"
+                  alt="QR Code"
+                />
+              </div>
+              <div class="col-8">
+                <p class="mt-2" style="margin-bottom: 5px; color: #2e4a4d">
+                  P51800033931
+                </p>
+                <p>
+                  <a
+                    href="https://maharerait.mahaonline.gov.in"
+                    style="color: #2e4a4d"
+                    >https://maharerait.mahaonline.gov.in</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-md-3 col-12 d-flex justify-content-center align-items-center"
+            style="margin-bottom: 20px"
+          >
+            <img
+              src="img/facebook.png"
+              class="img-fluid mx-2"
+              height="10vh"
+              alt="Facebook"
+            />
+            <img
+              src="img/instagram (1).png"
+              class="img-fluid mx-2"
+              height="10vh"
+              alt="Instagram"
+            />
+            <img
+              src="img/whatsapp.png"
+              class="img-fluid mx-2"
+              height="10vh"
+              alt="WhatsApp"
+            />
+          </div>
+        </div>
+        <br />
+        <h5 style="font-family: 'Times New Roman'; color: #2e4a4d">
+          DISCLAIMER
+        </h5>
+        <p style="color: #2e4a4d">
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It
+          has roots in a piece of classical Latin literature from 45 BC, making
+          it over 2000 years old. Richard McClintock, a Latin professor at
+          Hampden Sydney College in Virginia, looked up one of the more obscure
+          Latin words, consectetur, from a Lorem Ipsum passage, and going
+          through the cites of the word in classical literature, discovered the
+          undoubtable source. Lorem Ipsum comes from sections 1.10.32 and
+          1.10.33 of de Finibus Bonorum et Malorum (The Extremes of Good and
+          Evil) by Cicero, written in 45 BC. This book is a treatise on the
+          theory of ethics, very popular during the Renaissance. The first line
+          of Lorem Ipsum, Lorem ipsum dolor sit amet..", comes from a line in
+          section 1.10.32
+        </p>
+        <hr />
+        <div class="row">
+          <div class="col-md-6 col-12 mb-2 mb-md-0">
+            <p
+              class="text-md-left mob_center"
+              style="color: #2e4a4d; text-align: left"
+            >
+              Privacy Policy
+            </p>
+          </div>
+          <div class="col-md-6 col-12 text-center text-md-right">
+            <p style="color: #2e4a4d">
+              © 2023 All Rights Reserved by xyz | Powered by Insomniacs
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

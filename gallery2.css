@@ -1,0 +1,55 @@
+.carousel-wrap {
+    margin: 90px auto;
+    padding: 0 5%;
+    width: 80%;
+    position: relative;
+}
+
+/* Style each carousel item */
+.owl-carousel .item {
+    position: relative;
+    z-index: 100; 
+    -webkit-backface-visibility: hidden;
+    margin: 0 10px; /* Increase the gap between items */
+    border-radius: 10px; /* Add border-radius */
+    overflow: hidden; /* Ensure content fits within the rounded corners */
+}
+
+/* Up items move slightly up */
+.owl-carousel .item.up {
+    margin-top: -20px;  /* Move up */
+}
+
+/* Down items move slightly down */
+.owl-carousel .item.down {
+    margin-top: 50px;  /* Move down */
+}
+
+/* Custom navigation buttons */
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #edac76;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 200;
+    border-radius: 50%;
+}
+
+/* Position the previous button on the left side */
+.prev-button {
+    left: -50px;
+}
+
+/* Position the next button on the right side */
+.next-button {
+    right: -50px;
+}
+
+/* Hover effects for buttons */
+
+

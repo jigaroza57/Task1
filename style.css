@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-wrap {
+    margin: 90px auto;
+    padding: 0 5%;
+    width: 80%;
+    position: relative;
+}
+
+/* fix blank or flashing items on carousel */
+.owl-carousel .item {
+    position: relative;
+    z-index: 100; 
+    -webkit-backface-visibility: hidden;
+    margin: 0 10px; /* Increase the gap between items */
+    border-radius: 10px; /* Add border-radius */
+    overflow: hidden; /* Ensure content fits within the rounded corners */
+}
+
+/* Up items move slightly up */
+.owl-carousel .item.up {
+    margin-top: -20px;  /* Move up */
+}
+
+/* Down items move slightly down */
+.owl-carousel .item.down {
+    margin-top: 50px;  /* Move down */
+}
+
+/* Navigation buttons styling */
+.owl-nav > div {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #cdcbcd;
+    cursor: pointer;
+}
+
+.owl-nav i {
+    font-size: 52px;
+}
+
+.owl-nav .owl-prev {
+    left: -30px;
+}
+
+.owl-nav .owl-next {
+    right: -30px;
+}
